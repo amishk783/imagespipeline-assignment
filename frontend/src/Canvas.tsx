@@ -13,11 +13,12 @@ export const CanvasBoard = () => {
   const [brushRadius, setBrushRadius] = useState(40);
   const [error, setError] = useState("");
   const [uploadedId, setUploadedId] = useState(null);
+  console.log("🚀 ~ CanvasBoard ~ uploadedId:", uploadedId);
 
   const [compare, setCompare] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const fabricCanvasRef = useRef<Canvas>(null);
+  const fabricCanvasRef = useRef<Canvas | null>(null);
 
   useEffect(() => {
     if (canvasRef.current) {
